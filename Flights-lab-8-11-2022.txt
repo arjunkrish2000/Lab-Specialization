@@ -1,0 +1,84 @@
+var flights = new int[10];
+
+
+for (int i = 0; i < flights.Length; i++)
+{
+    Console.WriteLine("Enter the number");
+    flights[i] = int.Parse(Console.ReadLine());
+}
+
+Console.WriteLine("Flights numbers are:");
+foreach (int item in flights)
+    Console.WriteLine(item + " ");
+
+//ascending order
+
+int temp;
+for (int j = 0; j <= flights.Length - 2; j++)
+{
+    for (int i = 0; i <= flights.Length - 2; i++)
+    {
+        if (flights[i] > flights[i + 1])
+        {
+            temp = flights[i + 1];
+            flights[i + 1] = flights[i];
+            flights[i] = temp;
+        }
+    }
+}
+
+
+
+Console.WriteLine("Ascending Order Sorted:");
+foreach (int item in flights)
+    Console.WriteLine(item + " ");
+
+//descending order
+
+for (int j = 0; j <= flights.Length - 2; j++)
+{
+    for (int i = 0; i <= flights.Length - 2; i++)
+    {
+        if (flights[i] > flights[i + 1])
+        {
+            temp = flights[i + 1];
+            flights[i + 1] = flights[i];
+            flights[i] = temp;
+        }
+    }
+}
+
+
+
+Console.WriteLine("Descending Order Sorted:");
+foreach (int item in flights)
+    Console.WriteLine(item + " ");
+
+//Searching
+
+Console.WriteLine("Enter the flight number to get searched: ");
+var fno = int.Parse(Console.ReadLine());
+
+int flag = 0;
+
+foreach (var item in flights)
+{
+    if (item == fno)
+    {
+      flag = 1;
+    }
+    else
+    {
+        flag = 0;
+    }
+}
+
+if (flag == 1)
+{
+    Console.WriteLine("The Flight with number " + fno + " is available");
+}
+else
+{
+    Console.WriteLine("The Flight with number " + fno + " is not available");
+}
+
