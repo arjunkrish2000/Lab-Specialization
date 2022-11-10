@@ -1,0 +1,23 @@
+Dictionary<string, string>[] student = new Dictionary<string, string>[10];
+string name, age;
+
+for (int i = 0; i < 2; i++)
+{
+    student[i] = new Dictionary<string, string>();
+    Console.WriteLine($"Enter the Name of student {i + 1} : ");
+    name = Console.ReadLine();
+    student[i].Add("Name", name);
+    Console.WriteLine($"Enter the Age of student {i + 1} : ");
+    age = Console.ReadLine();
+    student[i].Add("Age", age);
+}
+
+
+for (int i = 0; i < 2; i++)
+{
+    Console.WriteLine();
+    Console.WriteLine($"Student no {i + 1} -> Name : {student[i]["Name"]}");
+    Console.WriteLine($"Student no {i + 1} -> Age : {student[i]["Age"]}");
+
+
+}
